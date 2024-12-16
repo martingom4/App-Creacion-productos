@@ -13,6 +13,7 @@ def resta(num1,num2):
     return {"resultado": int(num1) - int(num2)}
 
 
+
 @operations.route('/division/<num1>/<num2>')
 def division(num1,num2):
     if num1 or num2 == 0:
