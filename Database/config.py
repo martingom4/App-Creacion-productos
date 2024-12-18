@@ -8,3 +8,4 @@ from flask_sqlalchemy import SQLAlchemy
 #This is the path to the database file
 
 db = SQLAlchemy()#This is the object that will allow us to interact with the database
+

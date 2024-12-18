@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from Models.models import User
 from Database.config import db
-#TODO 
+#TODO
 """
 estdudiar bien esto mañana para entender todo el funcionamiento
 
