@@ -11,11 +11,11 @@ class User(db.Model):
 
 
 
-class Category(db.MOdel):
+class Category(db.Model):
     __tablename__ = 'categories'
 
-    id = db.column(db.integer , primary_key=True)
-    name = db.column(db.string(100), nullable=False)
+    id = db.Column(db.Integer , primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
 
     #relacion se define asi
     products = db.relationship('Product', backref='category', lazy=True)
@@ -24,11 +24,11 @@ class Category(db.MOdel):
 class Product(db.Model):
     __tablename__ = 'products'
 
-    id = db.column(db.integer , primary_key=True)
-    name = db.column(db.string(100), nullable=False)
-    price = db.column(db.float, nullable=False)
+    id = db.Column(db.Integer , primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    price = db.Column(db.Float, nullable=False)
 
 
     #vamos a hacer la relacion entre pdocutos y categoria
 
-    category_id = db.column(db.integer, db.foreingkey('categories.id'), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey('categories.id'), nullable=False)

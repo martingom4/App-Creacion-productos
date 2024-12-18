@@ -9,12 +9,15 @@ app = Flask(__name__)
 
 
 # Database configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:MARgomlcmajm100@localhost/Prueba'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+
 db.init_app(app)
 
 with app.app_context():
-    db.create_all() # Crea las tablas definidas en models.py
+    db.create_all()
+    print("Tablas creadas en PostgreSQL") # Crea las tablas definidas en models.py
 
 app.register_blueprint(main)
 app.register_blueprint(operations)
