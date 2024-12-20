@@ -11,12 +11,18 @@ Un método add_product(name, price, category): Añade un nuevo producto a la lis
 
 class ProductService:
     def __init__(self):
-        pass
+        self.products = []
 
     def get_products(self):
-        pass
+        vacia = len(self.products)
+        if vacia == 0:
+            return "No hay productos"
+        else:
+            return self.products # devolvemos la lista de prodcutos que tenemos
 
-    def add_product(self, name, price, category):
-        pass
+    def add_product(self, name,price,category):
+        self.products.append({"name": name, "price": price, "category": category})
+        return self.products
 
-    
+
+
